@@ -1,6 +1,6 @@
 %global commit 3759c84a72bd67657c3244afe790592ff9bead5c
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global checkout 20150831git%{shortcommit}
+%global checkout 20150903git%{shortcommit}
 
 Summary: NetworkManager VPN plugin for SSH
 Name: NetworkManager-ssh
@@ -58,7 +58,10 @@ fi
 %if 0%{?rhel} == 7
 CFLAGS="-DSECRET_API_SUBJECT_TO_CHANGE %{optflags}" \
 %endif
-%configure --disable-static --enable-more-warnings=yes
+%configure \
+        --disable-static \
+        --enable-more-warnings=yes \
+        --with-dist-version=%{version}-%{release}
 make %{?_smp_mflags}
 
 %install
