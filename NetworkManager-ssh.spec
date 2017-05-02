@@ -1,17 +1,17 @@
 Summary: NetworkManager VPN plugin for SSH
 Name: NetworkManager-ssh
-Version: 1.2.1
-Release: 0%{?dist}
+Version: 1.2.6
+Release: 1%{?dist}
 License: GPLv2+
 URL: https://github.com/danfruehauf/NetworkManager-ssh
 Group: System Environment/Base
-Source0: https://github.com/danfruehauf/NetworkManager-ssh/archive/1.2.1.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/danfruehauf/NetworkManager-ssh/archive/1.2.6.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: autoconf
 BuildRequires: gtk3-devel
 BuildRequires: NetworkManager-devel
-BuildRequires: NetworkManager-glib-devel >= 1:1.2.0
-BuildRequires: NetworkManager-libnm-devel >= 1:1.2.0
+BuildRequires: NetworkManager-glib-devel >= 1:1.2.6
+BuildRequires: NetworkManager-libnm-devel >= 1:1.2.6
 BuildRequires: glib2-devel
 BuildRequires: libtool intltool gettext
 BuildRequires: libnm-gtk-devel >= 0.9.10
@@ -20,7 +20,7 @@ BuildRequires: libsecret-devel
 BuildRequires: libtool intltool gettext
 Requires: gtk3
 Requires: dbus
-Requires: NetworkManager >= 1:1.2.0
+Requires: NetworkManager >= 1:1.2.6
 Requires: openssh-clients
 Requires: shared-mime-info
 Requires: sshpass
@@ -82,6 +82,12 @@ rm -f %{buildroot}%{_libdir}/NetworkManager/lib*.la
 %{_datadir}/appdata/network-manager-ssh.metainfo.xml
 
 %changelog
+* Tue May 02 2017 Dan Fruehauf <malkodan@gmail.com> - 1.2.6-1
+- Update to 1.2.6 release
+
+* Fri Feb 10 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.2.1-1
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 * Thu Sep 01 2016 Dan Fruehauf <malkodan@gmail.com> - 1.2.1-0
 - Update to 1.2.1 release
 - Fixed upstream #57 (Fedora #1350244) - Time out waiting for service
